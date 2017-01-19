@@ -1,22 +1,22 @@
 /**
- * Created by towns on 1/17/2017.
+ * Created by Forrest Townsend on 1/17/2017.
  */
 public class Frog extends Animal{
-    double hop;
+    double speed;
 
-    public Frog(double price, int amt, double hopLen) {
+    public Frog(double price, int amt, double moveLen) {
         this.setPrice(price);
         this.setStock(amt);
         this.setName("Frog");
-        hop = hopLen;
+        speed = moveLen;
 
     }
 
-    public void hop(){
-        System.out.println("The frog hops " + hop + "inches away from you.");
+    public void move(){
+        System.out.println("The frog hops " + speed + " inches away from you.");
     }
 
-    public void croak(){
+    public void speak(){
         System.out.println("The frog croaks loudly.");
     }
 

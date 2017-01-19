@@ -3,7 +3,7 @@
  */
 public class Animal extends Product{
 
-    //create constructor
+    //create constructor, I wanted to restructure product into interface but no time.
     public Animal(){
 
     }

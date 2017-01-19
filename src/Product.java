@@ -1,5 +1,5 @@
 /**
- * Created by towns on 1/17/2017.
+ * Created by Forrest Townsend on 1/17/2017.
  */
 public class Product {
 
@@ -43,11 +43,17 @@ public class Product {
         amountInStock = newStockAmount;
     }
 
+    //create methods that increase or reduce the amount of stock by 1, for selling and
+    //purchasing.
+    public void addStock(){ amountInStock++;}
+
+    public void reduceStock(){ amountInStock--;}
+
 
 
     @Override
     public String toString(){
-        return name + ":  Number in Stock " + amountInStock + "Sold For " + sellPrice;
+        return name + ":  Number in Stock " + amountInStock + ". Sold For " + sellPrice;
     }
 
 }

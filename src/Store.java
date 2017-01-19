@@ -40,7 +40,7 @@ public class Store {
         else
             return false;
     }
-
+    //add method that clears inventory
     public void clearInventory(){
         size = 0;
         for(int i = 0; i < inventory.length; i++) {
@@ -48,12 +48,31 @@ public class Store {
         }
     }
 
-    public String ShowInventory(){
-        String rtnStr = "";
+    //add method that shows
+    public String showInventory(){
+        String rtnStr = "Store: " + getName() + "\n";
         int i = 0;
-        while(i < inventory.length && inventory[i] != null)
-            rtnStr = rtnStr + "\n" + inventory[i];
+        int invLen = inventory.length;
+        while(i < invLen && inventory[i] != null) {
+            rtnStr = rtnStr + "\n" + inventory[i] + ". In inventory index " + i;
+            i++;
+        }
+        if(i == 0)
+            rtnStr = "No items in inventory";
+
         return rtnStr;
+    }
+    //create method that 'sells' a product, reducing stock by one and returning true
+    //no customer model has been created, so no money is exchanged.
+    public Boolean sellProduct(int invIndex) throws NullPointerException{
+        if(invIndex<0 || invIndex > inventory.length)
+            throw new NullPointerException();
+        boolean rtrnVal = false;
+        if(inventory[invIndex].getStock()>0){
+            inventory[invIndex].reduceStock();
+            rtrnVal = true;
+        }
+        return rtrnVal;
     }
 
 }
