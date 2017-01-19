@@ -17,7 +17,7 @@ public class Lizard extends Animal{
     }
 
     public void speak(){
-        System.out.println("The lizard makes a small creaking noise");
+        System.out.println("The lizard makes a small creaking noise.");
     }
 
 
